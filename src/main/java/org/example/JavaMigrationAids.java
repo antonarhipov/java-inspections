@@ -10,20 +10,17 @@ public class JavaMigrationAids {
     }
 
     void diamondOperator() {
-        List<String> s = new ArrayList<String>();
+        List<String> s = new ArrayList<>();
     }
 
     void replacedWithLambda() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+        new Thread(() -> {
                 // run thread
-            }
-        });
+            });
     }
 
     void replacedWithMethodReference() {
-        Runnable r = () -> System.out.println();
+        Runnable r = System.out::println;
     }
 
     boolean replaceWithStringAPI(List<String> data) {
@@ -37,29 +34,21 @@ public class JavaMigrationAids {
     }
 
     void replaceWithList_replaceAll(List<String> strings){
-        for (int i = 0; i < strings.size(); i++) {
-            String str = strings.get(i).toLowerCase();
-            strings.set(i, str);
-        }
+        strings.replaceAll(String::toLowerCase);
     }
 
     double replaceWithSwithExpression(String fruit) {
         // Switch statement can be replaced with enhanced 'switch'
-        switch (fruit) {
-            case "Apple":
-                return 1.0;
-            case "Orange":
-                return 1.5;
-            case "Mango":
-                return 2.0;
-            default:
-                throw new IllegalArgumentException();
-        }
+        return switch (fruit) {
+            case "Apple" -> 1.0;
+            case "Orange" -> 1.5;
+            case "Mango" -> 2.0;
+            default -> throw new IllegalArgumentException();
+        };
     }
 
     public void usePatternVariable(Object obj) {
-        if (obj instanceof String) {
-            String str = (String) obj;
+        if (obj instanceof String str) {
             //noinspection UseOfSystemOutOrSystemErr
             System.out.println(str);
         }

@@ -6,16 +6,16 @@ import org.jetbrains.annotations.Range;
 
 public class NullSafetyIssues {
 
-    abstract class A {
+    abstract static class A {
         @NotNull
         abstract String m();
     }
     class B extends A {
-        String m() { return "empty string"; }
+        @NotNull String m() { return "empty string"; }
     }
 
-    class FieldIsNeverInitialized {
-        private @NotNull String value;
+    static class FieldIsNeverInitialized {
+        private String value;
 
         public void setValue(@NotNull String value) {
             this.value = value;
@@ -27,7 +27,7 @@ public class NullSafetyIssues {
     }
 
     //@Nullable // Nullable annotation disables the inspection
-    public Object returnNull(){
+    public @Nullable Object returnNull(){
         return null;
     }
 
