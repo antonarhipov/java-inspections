@@ -21,4 +21,8 @@ projectJDK: 17 #(Applied in CI/CD pipeline)
 
 linter: jetbrains/qodana-jvm:latest
 
+failureConditions:
+  severityThresholds:
+    critical: 0
+
 fixesStrategy: apply
