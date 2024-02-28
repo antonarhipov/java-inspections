@@ -5,24 +5,15 @@
 version: "1.0"
 #Specify inspection profile for code analysis
 profile:
-  name: MyInspectionProfile
+  name: ParanoidProfile
 #  name: qodana.starter
-
-#Enable inspections
-include:
-  - name: CyclomaticComplexity
-#Disable inspections
-#exclude:
-#  - name: <SomeDisabledInspectionId>
-#    paths:
-#      - <path/where/not/run/inspection>
 
 projectJDK: 17 #(Applied in CI/CD pipeline)
 
 linter: jetbrains/qodana-jvm:latest
 
-failureConditions:
-  severityThresholds:
-    critical: 0
+#failureConditions:
+#  severityThresholds:
+#    critical: 0
 
 fixesStrategy: apply

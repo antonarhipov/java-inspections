@@ -2,7 +2,7 @@ package org.example;
 
 import org.jetbrains.annotations.PropertyKey;
 
-public class Criticals {
+public class Critical {
 
     @PropertyKey(resourceBundle = "myBundle") String value = "somePropertyValueX";
 
