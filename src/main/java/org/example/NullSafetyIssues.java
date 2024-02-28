@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.Random;
 
 public class NullSafetyIssues {
 
@@ -33,12 +34,17 @@ public class NullSafetyIssues {
     }
 
     void redundantChecks(){
-        var s = fetchX();
+        var optional = fetchX();
+        String value = optional.get(); //calling get without isPresent check
+        if (value != null) { //always true
+            //noinspection UseOfSystemOutOrSystemErr
+            System.out.println("value = " + value);
+        }
 
     }
 
-    private Optional<String> fetchX() {
-        return Optional.of("String");
+    private @NotNull Optional<String> fetchX() {
+        return Optional.of(String.valueOf(new Random(100L).nextLong()));
     }
 
 
