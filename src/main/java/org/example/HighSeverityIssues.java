@@ -2,7 +2,7 @@ package org.example;
 
 public class HighSeverityIssues {
 
-    ProblemsFactory factory;
+    private ProblemsFactory factory;
 
     public void usingDeprecatedApi() {
         factory.method1();

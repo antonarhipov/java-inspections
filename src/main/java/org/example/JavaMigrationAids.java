@@ -26,7 +26,7 @@ public class JavaMigrationAids {
         Runnable r = () -> System.out.println();
     }
 
-    boolean replaceWithStringAPI(List<String> data) {
+    boolean replaceWithStreamApi(List<String> data) {
         for (String e : data) {
             String trimmed = e.trim();
             if (!trimmed.startsWith("xyz")) {
@@ -43,7 +43,7 @@ public class JavaMigrationAids {
         }
     }
 
-    double replaceWithSwithExpression(String fruit) {
+    double replaceWithSwitchExpression(String fruit) {
         // Switch statement can be replaced with enhanced 'switch'
         switch (fruit) {
             case "Apple":

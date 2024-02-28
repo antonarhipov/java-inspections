@@ -21,6 +21,7 @@ public class MetricsIssues {
                     }
                     else {
                         // etc...
+                        //noinspection UseOfSystemOutOrSystemErr
                         System.out.println();
                     }
                 }

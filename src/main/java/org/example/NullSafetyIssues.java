@@ -2,16 +2,17 @@ package org.example;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.Range;
+
+import java.util.Optional;
 
 public class NullSafetyIssues {
 
     abstract class A {
         @NotNull
-        abstract String m();
+        abstract String method();
     }
     class B extends A {
-        String m() { return "empty string"; }
+        String method() { return "empty string"; }
     }
 
     class FieldIsNeverInitialized {
@@ -26,9 +27,21 @@ public class NullSafetyIssues {
         }
     }
 
-    //@Nullable // Nullable annotation disables the inspection
+    @Nullable // Nullable annotation disables the inspection
     public Object returnNull(){
         return null;
     }
+
+    void redundantChecks(){
+        var s = fetchX();
+
+    }
+
+    private Optional<String> fetchX() {
+        return Optional.of("String");
+    }
+
+
+
 
 }
