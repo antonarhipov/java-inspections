@@ -1,3 +1,4 @@
 <component name="DependencyValidationManager">
-  <scope name="MyScope" pattern="file[java-inspections]:src/main/java/org/example/metrics/*" />
+  <scope name="MyScope" pattern=" file[java-inspections]:src/main/java/org/example/metrics/*" />
+  <scope name="hy" pattern="file[java-inspections]"
 </component>
