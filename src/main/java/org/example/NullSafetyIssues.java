@@ -8,16 +8,16 @@ import java.util.Random;
 
 public class NullSafetyIssues {
 
-    abstract class A {
+    abstract static class A {
         @NotNull
         abstract String method();
     }
     class B extends A {
-        String method() { return "empty string"; }
+        @NotNull String method() { return "empty string"; }
     }
 
-    class FieldIsNeverInitialized {
-        private @NotNull String value;
+    static class FieldIsNeverInitialized {
+        private String value;
 
         public void setValue(@NotNull String value) {
             this.value = value;
@@ -36,10 +36,9 @@ public class NullSafetyIssues {
     void redundantChecks(){
         var optional = fetchX();
         String value = optional.get(); //calling get without isPresent check
-        if (value != null) { //always true
-            //noinspection UseOfSystemOutOrSystemErr
-            System.out.println("value = " + value);
-        }
+        //always true
+        //noinspection UseOfSystemOutOrSystemErr
+        System.out.println("value = " + value);
 
     }
 
