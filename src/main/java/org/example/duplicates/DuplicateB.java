@@ -15,7 +15,7 @@ public class DuplicateB {
     }
 
     // Prints convex hull of a set of n points.
-    public static void convexHull(Coordinate points[], int n)
+    public static void convexHull(Coordinate[] points, int n)
     {
         // There must be at least 3 points
         if (n < 3) return;
