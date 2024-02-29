@@ -8,16 +8,16 @@ import java.util.Random;
 
 public class NullSafetyIssues {
 
-    abstract class A {
+    abstract static class A {
         @NotNull
         abstract String method();
     }
     class B extends A {
-        String method() { return "empty string"; }
+        @NotNull String method() { return "empty string"; }
     }
 
-    class FieldIsNeverInitialized {
-        private @NotNull String value;
+    static class FieldIsNeverInitialized {
+        private String value;
 
         public void setValue(@NotNull String value) {
             this.value = value;
