@@ -5,7 +5,7 @@
       <scope name="MyScope" level="WARNING" enabled="true">
         <option name="m_limit" value="4" />
       </scope>
-      <option name="m_limit" value="4" />
+      <option name="m_limit" value="10" />
     </inspection_tool>
     <inspection_tool class="ParametersPerConstructor" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="MyScope" level="WARNING" enabled="true" />

@@ -13,6 +13,12 @@ public class Critical {
         factory.method2();
     }
 
+    public void example(){
+        int x;
+        x = 1;
+        System.out.println("x = " + x);
+    }
+
 }
 
 
