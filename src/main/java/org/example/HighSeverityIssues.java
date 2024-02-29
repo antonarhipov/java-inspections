@@ -5,7 +5,7 @@ public class HighSeverityIssues {
     private ProblemsFactory factory;
 
     public void usingDeprecatedApi() {
-        factory.method1();
+        factory.method3();
     }
 
     void unreachableCode() {
