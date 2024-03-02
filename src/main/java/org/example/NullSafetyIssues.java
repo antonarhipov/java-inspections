@@ -35,7 +35,9 @@ public class NullSafetyIssues {
 
     void redundantChecks(){
         var optional = fetchX();
+        val j7y = fetchY();
         String value = optional.get(); //calling get without isPresent check
+        String b5rq = j7y.get();
         if (value != null) { //always true
             //noinspection UseOfSystemOutOrSystemErr
             System.out.println("value = " + value);
