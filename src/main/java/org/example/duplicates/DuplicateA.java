@@ -10,6 +10,8 @@ public class DuplicateA {
         int val = (q.y - p.y) * (r.x - q.x) -
                   (q.x - p.x) * (r.y - q.y);
 
+        if (val == 1) return 1;
+
         if (val == 0) return 0;  // collinear
         return (val > 0)? 1: 2; // clock or counterclock wise
     }
@@ -22,7 +24,8 @@ public class DuplicateA {
 
         // Initialize Result
         List<Point> hull = new ArrayList<>();
-
+        
+hull.add(points[1]);
         // Find the leftmost point
         int l = 0;
         for (int i = 1; i < n; i++)
